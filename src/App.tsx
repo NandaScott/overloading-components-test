@@ -1,6 +1,7 @@
 import './App.css';
 import ComponentHandler from './components/component-handler';
 import { Config } from './components/component-handler';
+import { Element } from './components/element-example';
 
 const configs: Config[] = [
   {
@@ -35,6 +36,7 @@ function App() {
         debug
         config={{ type: 'button-display', initialClicks: 0, text: 'Foo' }}
       />
+      <Element as='div'>Hello World</Element>
     </div>
   );
 }
