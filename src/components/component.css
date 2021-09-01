@@ -1,0 +1,44 @@
+.coloredBlock {
+  flex: auto;
+  display: flex;
+  align-items: center;
+  width: 50px;
+  height: 85px;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.red {
+  background-color: red;
+}
+
+.yellow {
+  background-color: rgb(182, 182, 0);
+}
+
+.green {
+  background-color: green;
+}
+
+.text {
+  display: flex;
+  justify-content: center;
+  flex: auto;
+  color: white;
+}
+
+.buttonDisplayContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+}
+
+.buttonDisplayText {
+  color: white;
+  display: flex;
+  justify-content: center;
+  flex: auto;
+}
