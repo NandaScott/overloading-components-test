@@ -22,15 +22,14 @@ interface ShortformProps extends IncludeDebug {
 interface LongformProps
   extends Required<ColorBlockProps>,
     Required<ButtonDisplayProps>,
-    IncludeDebug {
-  component: 'colorBlock' | 'buttonDisplay';
+    IncludeDebug {}
+
+export interface OverloadedComponentHandler {
+  (props: ShortformProps): JSX.Element;
+  (props: LongformProps): JSX.Element;
 }
 
-type ComponentHandlerProps = ShortformProps | LongformProps;
-
-export function ComponentHandler(props: LongformProps): React.ReactElement;
-export function ComponentHandler(props: ShortformProps): React.ReactElement;
-export default function ComponentHandler(props: ComponentHandlerProps) {
+const ComponentHandler: OverloadedComponentHandler = (props) => {
   const { debug } = props;
   const { config } = props as ShortformProps;
   const { initialClicks, text, color, component } = props as LongformProps;
@@ -70,4 +69,6 @@ export default function ComponentHandler(props: ComponentHandlerProps) {
       {config && <ShortComponent />}
     </>
   );
-}
+};
+
+export default ComponentHandler;

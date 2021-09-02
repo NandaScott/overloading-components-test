@@ -30,7 +30,12 @@ function App() {
   return (
     <div className='root'>
       {configs.map((val) => (
-        <ComponentHandler config={val} />
+        <ComponentHandler
+          color={val.color}
+          component='colorBlock'
+          initialClicks={0}
+          text='test'
+        />
       ))}
       <ComponentHandler
         debug

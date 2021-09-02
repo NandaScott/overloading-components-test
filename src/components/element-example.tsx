@@ -2,7 +2,17 @@
 
 import React from 'react';
 
-export interface ElementProps {}
+// export interface ElementAlt1Props { b?: 'string'; c?: string; }
+// ‍export interface ElementAlt2Props { b?: 'number'; c?: number; }
+export interface ElementAlt1Props {
+  b?: 'string';
+  c?: string;
+}
+export interface ElementAlt2Props {
+  b?: 'number';
+  c?: number;
+}
+export type ElementProps = ElementAlt1Props | ElementAlt2Props;
 
 export type DistributiveOmit<T, K extends keyof any> = T extends any
   ? Omit<T, K>
