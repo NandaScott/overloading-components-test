@@ -30,17 +30,12 @@ function App() {
   return (
     <div className='root'>
       {configs.map((val) => (
-        <ComponentHandler
-          color={val.color}
-          component='colorBlock'
-          initialClicks={0}
-          text='test'
-        />
+        <ComponentHandler config={val} />
       ))}
       <ComponentHandler
-        debug
         config={{ type: 'button-display', initialClicks: 0, text: 'Foo' }}
       />
+      <ComponentHandler type='button-display' text='ASDF' />
       <Element as='div'>Hello World</Element>
     </div>
   );
